@@ -20,9 +20,7 @@ USE `projetos` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projetos`.`projeto` (
   `idProjeto` INT NOT NULL,
-  `idSolar` VARCHAR(45) NULL,
-  `idSubestacao` VARCHAR(45) NULL,
-  `idPadraoEntrada` VARCHAR(45) NULL,
+  `deProjeto` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`idProjeto`))
 ENGINE = InnoDB;
 
