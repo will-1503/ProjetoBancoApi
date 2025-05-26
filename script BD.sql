@@ -1,3 +1,4 @@
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -20,7 +21,7 @@ USE `projetos` ;
 CREATE TABLE IF NOT EXISTS `projetos`.`projeto` (
   `idProjeto` INT NOT NULL,
   `idSolar` VARCHAR(45) NULL,
-  `idSubestação` VARCHAR(45) NULL,
+  `idSubestacao` VARCHAR(45) NULL,
   `idPadraoEntrada` VARCHAR(45) NULL,
   PRIMARY KEY (`idProjeto`))
 ENGINE = InnoDB;
@@ -34,11 +35,11 @@ CREATE TABLE IF NOT EXISTS `projetos`.`usuario` (
   `idNome` VARCHAR(45) NULL,
   `idEmail` VARCHAR(45) NULL,
   `idProtocoo` INT NULL,
-  `projeto_idProjeto` INT NOT NULL,
-  PRIMARY KEY (`idUsuario`, `projeto_idProjeto`),
-  INDEX `fk_usuario_projeto_idx` (`projeto_idProjeto` ASC) VISIBLE,
+  `idProjeto` INT NOT NULL,
+  PRIMARY KEY (`idUsuario`, `idProjeto`),
+  INDEX `fk_usuario_projeto_idx` (`idProjeto` ASC) VISIBLE,
   CONSTRAINT `fk_usuario_projeto`
-    FOREIGN KEY (`projeto_idProjeto`)
+    FOREIGN KEY (`idProjeto`)
     REFERENCES `projetos`.`projeto` (`idProjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
