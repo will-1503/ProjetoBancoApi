@@ -47,3 +47,12 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `projetos`.`projeto`
+(`idProjeto`, `deProjeto`) VALUES (0, 'Subestação');
+
+INSERT INTO `projetos`.`projeto`
+(`idProjeto`, `deProjeto`) VALUES (1, 'Solar');
+
+INSERT INTO `projetos`.`projeto`
+(`idProjeto`, `deProjeto`) VALUES (2, 'Padrão de Entrada');
